@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Números Pares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Números Pares</h1>
+
+  <label for="valor">Informe um valor:</label>
+  <input type="number" id="valor">
+  <button onclick="exibirNumerosPares()">Exibir Números Pares</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function exibirNumerosPares() {
+      var valorInput = document.getElementById('valor').value;
+      var resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.innerHTML = ''; // Limpa o conteúdo anterior, se houver
+
+      if (isNaN(valorInput) || valorInput < 1) {
+        resultadoDiv.innerHTML = 'Por favor, insira um valor válido maior que 0.';
+        return;
+      }
+
+      var soma = 0;
+      for (var i = 2; i <= valorInput; i += 2) {
+        resultadoDiv.innerHTML += i + '<br>';
+        soma += i;
+      }
+
+      resultadoDiv.innerHTML += '<strong>Soma Total:</strong> ' + soma;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
